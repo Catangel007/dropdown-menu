@@ -1,4 +1,4 @@
-
+import "./style.css";
 
 const dropdownBtn = document.querySelector(".show");
 const visibleDiv = document.querySelector(".visible");
@@ -14,3 +14,9 @@ function displayMenu(){
         visibleDiv.style.display = "none";
     }
 }
+
+
+const div = document.querySelector("#image-carousel");
+const divChild= document.createElement("div");
+divChild.className= "image-display";
+div.appendChild(divChild);
