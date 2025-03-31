@@ -1,4 +1,6 @@
 import "./style.css";
+import leftIcon from "./angle-square-left.svg";
+import rightIcon from "./angle-square-right.svg";
 
 const dropdownBtn = document.querySelector(".show");
 const visibleDiv = document.querySelector(".visible");
@@ -14,7 +16,7 @@ function displayMenu(){
     }else {
         visibleDiv.style.display = "none";
     }
-    rotateCarousel(imageArray);
+   
 }
 
 // Image Carousel
@@ -25,15 +27,44 @@ div.appendChild(divChild);
 
 const imageArray = [];
 
-function rotateCarousel(images,left,right){
-   
-    for (let image of images){
-     const divChildImage = document.createElement("img");
-       image.src = images;
-       divChild.appendChild(divChildImage);
+const divChildImage = document.createElement("img");
+  divChild.appendChild(divChildImage);
+
+function rotateCarouselRight(arr){
+    if (arr <= 1){
+        return arr;
     }
 
-    if (left === true){
-        imageArray.length
-    }
+const lastElement = arr[arr.length - 1];
+
+for (let i = arr.length -1; i > 0; i--){
+    arr[i]= arr[i-1];
 }
+arr[0]= lastElement;
+return arr;
+
+}rotateCarouselRight(imageArray)
+
+  function rotateCarouselLeft(arr){
+
+    if(arr <= 1){
+        return arr;
+    }
+const firstElement = arr[0];
+    for (let i = arr.length - 1; i > 0 ; i--){
+     arr[i]= arr[i +1];
+    }
+ arr[arr.length - 1]= firstElement;
+ return arr;
+  }rotateCarouselLeft(imageArray);
+
+
+  function display(){
+    leftIcon.addEventListener("click", ()=>{
+        divChildImage.src = rotateCarouselLeft;
+    })
+
+    rightIcon.addEventListener("click", ()=>{
+        divChildImage.src = rotateCarouselRight;
+    })
+  }display();
