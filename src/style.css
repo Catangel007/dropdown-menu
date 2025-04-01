@@ -4,6 +4,14 @@
     color:white;
     font-size: large;
     text-align: center;
+    width: 5rem;
+    height: 5rem;
+}
+
+.visible{
     width: 10rem;
-    height: 10rem;
+    width: 10rem;
+    background-color: rgba(255, 192, 203, 0.537);
+    color:white;
+    list-style: none;
 }

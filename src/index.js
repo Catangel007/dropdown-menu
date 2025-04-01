@@ -4,12 +4,13 @@ import rightIcon from "./angle-square-right.svg";
 
 const dropdownBtn = document.querySelector(".show");
 const visibleDiv = document.querySelector(".visible");
+visibleDiv.style.display="none";
 dropdownBtn.addEventListener("click",()=>{
    displayMenu()
 })
 
 
-visibleDiv.style.display="none";
+
 function displayMenu(){
     if(visibleDiv.style.display === "none"){
         visibleDiv.style.display = "block"
