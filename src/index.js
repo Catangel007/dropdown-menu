@@ -1,6 +1,9 @@
 import "./style.css";
 import leftIcon from "./angle-square-left.svg";
 import rightIcon from "./angle-square-right.svg";
+import image1 from "./57380.jpg";
+import image2 from "./2703862.jpg";
+import image3 from "./3433931.jpg";
 
 const dropdownBtn = document.querySelector(".show");
 const visibleDiv = document.querySelector(".visible");
@@ -24,9 +27,14 @@ function displayMenu(){
 const div = document.querySelector("#image-carousel");
 const divChild= document.createElement("div");
 divChild.className = "image-display";
+const divLeft= document.createElement("div");
+const divRight = document.createElement("div");
+
+divLeft.appendChild(leftIcon);
+divRight.appendChild(rightIcon);
 div.appendChild(divChild);
 
-const imageArray = [];
+const imageArray = [image1,image2,image3];
 
 const divChildImage = document.createElement("img");
   divChild.appendChild(divChildImage);
