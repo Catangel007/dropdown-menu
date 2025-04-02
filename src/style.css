@@ -21,3 +21,29 @@
     height: 500px;
     border: 5pz solid black;
 }
+
+/* Ensure container has proper sizing */
+#image-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Style navigation buttons */
+  #image-carousel > div:first-child,
+  #image-carousel > div:last-child {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  #image-carousel > div:first-child { left: 10px; }
+  #image-carousel > div:last-child { right: 10px; }
+  
+  .image-display img {
+    width: 100%;
+    height: auto;
+  }

@@ -5,14 +5,14 @@ import image1 from "./57380.jpg";
 import image2 from "./2703862.jpg";
 import image3 from "./3433931.jpg";
 
+
+// dropdown menu
 const dropdownBtn = document.querySelector(".show");
 const visibleDiv = document.querySelector(".visible");
 visibleDiv.style.display="none";
 dropdownBtn.addEventListener("click",()=>{
    displayMenu()
 })
-
-
 
 function displayMenu(){
     if(visibleDiv.style.display === "none"){
@@ -23,57 +23,55 @@ function displayMenu(){
    
 }
 
+
+//xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxNEWxPROGRAMxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
 // Image Carousel
 const div = document.querySelector("#image-carousel");
 const divChild= document.createElement("div");
 divChild.className = "image-display";
-const divLeft= document.createElement("div");
+const divLeft = document.createElement("div");
 const divRight = document.createElement("div");
+
+
+const leftArrow = document.createElement("img");
+leftArrow.src = leftIcon;
+const rightArrow = document.createElement("img");
+rightArrow.src = rightIcon;
 
 divLeft.appendChild(leftIcon);
 divRight.appendChild(rightIcon);
+div.appendChild(divLeft);
 div.appendChild(divChild);
+div.appendChild(divRight); // Add navigation to container
 
 const imageArray = [image1,image2,image3];
 
 const divChildImage = document.createElement("img");
-  divChild.appendChild(divChildImage);
 
-function rotateCarouselRight(arr){
-    if (arr <= 1){
-        return arr;
-    }
+// Set initial image
+let currentIndex = 0;
+divChildImage.src = imageArray[currentIndex];
+divChild.appendChild(divChildImage);
 
-const lastElement = arr[arr.length - 1];
-
-for (let i = arr.length -1; i > 0; i--){
-    arr[i]= arr[i-1];
+// Simplified rotation functions
+function rotateRight() {
+  currentIndex = (currentIndex + 1) % imageArray.length;
 }
-arr[0]= lastElement;
-return arr;
 
-}rotateCarouselRight(imageArray)
+function rotateLeft() {
+  currentIndex = (currentIndex - 1 + imageArray.length) % imageArray.length;
+}
 
-  function rotateCarouselLeft(arr){
+// Event listeners with proper rotation
+leftArrow.addEventListener("click", () => {
+  rotateLeft();
+  divChildImage.src = imageArray[currentIndex];
+});
 
-    if(arr <= 1){
-        return arr;
-    }
-const firstElement = arr[0];
-    for (let i = arr.length - 1; i > 0 ; i--){
-     arr[i]= arr[i +1];
-    }
- arr[arr.length - 1]= firstElement;
- return arr;
-  }rotateCarouselLeft(imageArray);
-
-
-  function display(){
-    leftIcon.addEventListener("click", ()=>{
-        divChildImage.src = rotateCarouselLeft;
-    })
-
-    rightIcon.addEventListener("click", ()=>{
-        divChildImage.src = rotateCarouselRight;
-    })
-  }display();
+rightArrow.addEventListener("click", () => {
+  rotateRight();
+  divChildImage.src = imageArray[currentIndex];
+});
