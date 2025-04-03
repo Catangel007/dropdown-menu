@@ -33,16 +33,18 @@ const div = document.querySelector("#image-carousel");
 const divChild= document.createElement("div");
 divChild.className = "image-display";
 const divLeft = document.createElement("div");
-const divRight = document.createElement("div");
+const divRight =document.createElement("div");
 
 
 const leftArrow = document.createElement("img");
 leftArrow.src = leftIcon;
+leftArrow.className= "icon"
 const rightArrow = document.createElement("img");
 rightArrow.src = rightIcon;
+rightArrow.className= "icon"
 
-divLeft.appendChild(leftIcon);
-divRight.appendChild(rightIcon);
+divLeft.appendChild(leftArrow);
+divRight.appendChild(rightArrow);
 div.appendChild(divLeft);
 div.appendChild(divChild);
 div.appendChild(divRight); // Add navigation to container

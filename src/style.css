@@ -17,11 +17,13 @@
 }
 
 .image-display{
-    width: 1000px;
-    height: 500px;
+   
     border: 5pz solid black;
 }
-
+.icon{
+  height: 40px;
+  width: 20px;
+}
 /* Ensure container has proper sizing */
 #image-carousel {
     position: relative;
@@ -46,4 +48,16 @@
   .image-display img {
     width: 100%;
     height: auto;
+  }
+
+  .dot{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: black;
+  }
+
+  img{
+    height: 100%;
+    width:100%
   }
